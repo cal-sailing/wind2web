@@ -1,0 +1,4 @@
+ wind speed | 14.0 | knots | 1598732804
+ wind direction | 268.0 | degrees | 1598732804
+ wind direction | WSW | sector | 1598732804
+ wind gust speed | 17.0 | knots | 1598732804
