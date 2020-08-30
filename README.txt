@@ -1,10 +1,10 @@
 ===============================================================================================================================================
 This document contains:
     - a description of the CSC wind data web posting system
-    - installation instructions 
+    - install instructions 
     
-This system gets wind data from a csc machine running weewx a nd pushes the data to Appspot.
-Once the data is pushed, it is displayed on the appspot page.
+The system gets wind data from a csc machine running weewx and pushes the data to Appspot.
+Once the data is pushed, it is displayed on the appspot page. (Jorrit has the access to the appspot page)
 
 last updated: 08-29-2020
 info: cyril: cyrilbiz@gmail.com
