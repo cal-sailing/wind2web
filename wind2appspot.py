@@ -10,7 +10,6 @@ from subprocess import call
 
 vantageLoopFilePath = '/home/admin/wind2web/data/cscVantageLoop.csv'
 appspotFilePath     = "/home/admin/wind2web/data/cscWind.txt"
-jsonFilePath        = '/home/admin/wind2web/data/cscWind.json'
 
 # read last line of vantageLoop
 with open(vantageLoopFilePath) as fp:
@@ -60,32 +59,5 @@ with open(appspotFilePath,'w') as fp:
 
 
 
-##
-## Unused 
-##
 
-    
-#print( windSpeedStr )
-#print( windDirDegStr )
-#print( windDirSecStr )
-#print( windGustStr )
-    
-# post the txt file
-# the following lines were used at some point to avoid using the .sh script to push to appspot.
-# it was neater but it caused problems at some point. keeping them here as reference in case we want to revive them in the future.
-
-#url = 'http://cal-sailing.appspot.com/cam'
-#command1 =  'curl -F "windspeed=@' + appspotFilePath + '" -v http://cal-sailing.appspot.com/cam'
-#cmd2 = "scp /home/admin/wind2web/data/cscWind.txt kon***@cyril.website:/home3/kon***/public_html/csc/data/"
-#argScp = appspotFilePath +  " kon****@cyril.website:/home3/kon***/public_html/csc/data"
-#os.system( command1 )
-#os.system( cmd2 )
-#print cmd2
-
-
-#cmd = "scp user1@host1:files user2@host2:files"
-#call(command2.split(" "))
-
-
-#subprocess.call(["scp", argScp])
 
