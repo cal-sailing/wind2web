@@ -1,12 +1,12 @@
 ===============================================================================================================================================
 This document contains:
-    - a description of the CSC wind data web posting system
-    - install instructions 
+    - A description of the CSC wind data web posting system
+    - Install instructions 
     
 The system gets wind data from a csc machine running weewx and pushes the data to Appspot.
 Once the data is pushed, it is displayed on the appspot page. (Jorrit has the access to the appspot page)
 
-last updated: 08-29-2020
+last updated: 08-31-2020
 info: cyril: cyrilbiz@gmail.com
 ===============================================================================================================================================
 
@@ -25,11 +25,11 @@ A weewx extension (plugin) called csv then writes that data frame to a csv file 
 
   /home/admin/wind2web/data/cscVantageLoop.csv	  
 
-2. Then every second, the python script /home/admin/wind2web/wind2appspot.py is launched by a cron job.
+2. Then every minute, the python script /home/admin/wind2web/wind2appspot.py is launched by a cron job.
 That script takes the cscVantageLoop.csv as input, extracts the relevant infos from it and produces the /home/admin/wind2web/data/cscWind.txt
 
-3. Then a cron job calls the script /home/admin/wind2web/pushWind2Appspot.sh which uploads the file cscWind.txt to appspot.
-Jorrit as the access to appspot for actually displaying the data on the appspot page.
+3. Then 5 secondes later a cron job calls the script /home/admin/wind2web/pushWind2Appspot.sh which uploads the file cscWind.txt to appspot.
+Jorrit as the access to appspot and he handles actually displaying the data on the appspot page.
 
 -------------------
 HOW TO INSTALL
@@ -38,8 +38,12 @@ You must be logged in as the user named "admin"
 Your home directory must be /home/admin
 
 1. Download the folder wind2web (this repository) to /home/admin
+(or use git if you are familiar with it)
 
-note: If you do not have a /home/admin directory or if you need to install the system in a different directory (/usr/local/bin for instance) then you will have to manually change the path names accordingly in the following files ( because these paths are hardcoded for now):
+you should now have /home/admin/wind2web
+
+notes:
+* If you do not have a /home/admin directory or if you need to install the system in a different directory (/usr/local/bin for instance) then you will have to manually change the path names accordingly in the following files ( because these paths are hardcoded for now ):
 
 - wind2web/csv/install.py (change this BEFORE installing the csv extension to weewx)
 - wind2web/wind2appspot.py
@@ -66,9 +70,9 @@ before continuing: now check that the file /home/admin/wind2web/data/cscVantageL
 
 3. add the following three cron jobs:
 
-/etc/init.d/weewx start
+@reboot /etc/init.d/weewx start
 * * * * * /home/admin/wind2web/wind2appspot.py
 * * * * * ( sleep 5; /home/admin/wind2web/pushWind2appspot.sh )
 
-note: these cronjobs should be run as root (at least the restat one) therefore in order to add them use this: sudo crontab -e
+note: these cronjobs should be run as root (at least the start one) therefore in order to add them use this: sudo crontab -e
 
