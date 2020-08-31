@@ -19,7 +19,7 @@ with open(vantageLoopFilePath) as fp:
 keys = line0.split (",")
 vals = line1.split(",")
     
-# indexes
+# Get the indexes of data of interest ( time and wind )
 dateTimeIdx    = keys.index('# dateTime')
 windSpeed10Idx = keys.index('windSpeed10')
 windDirDegIdx  = keys.index('windDir')
