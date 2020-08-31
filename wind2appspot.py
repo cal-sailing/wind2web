@@ -39,7 +39,7 @@ windDirDeg      = vals[windDirDegIdx] # wind direction in degrees
 if (windDirDeg != 'None'):
     windDirDegFloat    = float(windDirDeg) # convert to float in order to do proper division for the "degrees to sector conversion"
 else:
-    windDirDegFloat = 0 # in case there is no wind direction in this frame set it to 0 degree (weewx frames included content varies from frames to frames)
+    windDirDegFloat = 0 # in case there is no wind direction in this frame set it to 0 degree (weewx content varies from frame to frame)
 
 # convert angles to sectors 
 windGust        = vals[windGustIdx]
