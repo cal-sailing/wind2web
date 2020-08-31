@@ -32,7 +32,7 @@ dateTimeUnix  = vals[dateTimeIdx]
 dateTimeIso   = str(datetime.datetime.fromtimestamp( float(vals[dateTimeIdx]) ).isoformat()) + 'UTC-7 hours'
 
     
-windSpeed10     = vals[windSpeed10Idx] #wind past 10 seconds (as per vantage doc regarding Loop data
+windSpeed10     = vals[windSpeed10Idx] # wind average in the past 10 seconds (as per vantage doc regarding Loop data)
 windDirDeg      = vals[windDirDegIdx]
     
 if (windDirDeg != 'None'):
@@ -40,16 +40,18 @@ if (windDirDeg != 'None'):
 else:
     windDirDegFloat = 0
 
+# convert angles to sectors 
 windGust        = vals[windGustIdx]
 sectors         =  ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW","N"]
 windDirSec      = sectors[int(windDirDegFloat/22.5)]
 
+# build the strings
 windSpeedStr    =  ' wind speed | ' + windSpeed10 + ' | knots | ' + dateTimeUnix + '\n'
 windDirDegStr   = ' wind direction | ' + windDirDeg + ' | degrees | ' + dateTimeUnix + '\n'
 windDirSecStr   = ' wind direction | ' +  windDirSec + ' | sector | ' + dateTimeUnix + '\n'
 windGustStr     =  ' wind gust speed | ' + windGust + ' | knots | ' + dateTimeUnix + '\n'
     
-# write to the txt file that will be uploaded to appspot
+# write the strings to the txt file that will be uploaded to appspot
 with open(appspotFilePath,'w') as fp:
     fp.write( windSpeedStr )
     fp.write( windDirDegStr )
