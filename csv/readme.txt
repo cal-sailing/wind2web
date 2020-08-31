@@ -5,7 +5,7 @@ Installation instructions:
 
 1) run the installer:
 
-wee_extension --install weewx-csv.tgz
+wee_extension --install=csv
 
 2) restart weewx:
 
