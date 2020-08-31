@@ -46,10 +46,10 @@ sectors         =  ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WS
 windDirSec      = sectors[int(windDirDegFloat/22.5)] # degrees to sector conversion
 
 # build the strings
-windSpeedStr    =  ' wind speed | ' + windSpeed10 + ' | knots | ' + dateTimeUnix + '\n'
+windSpeedStr    = ' wind speed | ' + windSpeed10 + ' | knots | ' + dateTimeUnix + '\n'
 windDirDegStr   = ' wind direction | ' + windDirDeg + ' | degrees | ' + dateTimeUnix + '\n'
 windDirSecStr   = ' wind direction | ' +  windDirSec + ' | sector | ' + dateTimeUnix + '\n'
-windGustStr     =  ' wind gust speed | ' + windGust + ' | knots | ' + dateTimeUnix + '\n'
+windGustStr     = ' wind gust speed | ' + windGust + ' | knots | ' + dateTimeUnix + '\n'
     
 # write the strings to the txt file that will be uploaded to appspot
 with open(appspotFilePath,'w') as fp:
