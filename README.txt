@@ -30,7 +30,7 @@ A weewx extension (plugin) called csv then writes that data frame to a csv file 
 That script takes the cscVantageLoop.csv as input, extracts the relevant infos from it and produces the /home/admin/wind2web/data/cscWind.txt
 
 3. Then 5 secondes later a cron job calls the script /home/admin/wind2web/pushWind2Appspot.sh which uploads the file cscWind.txt to appspot.
-Jorrit as the access to appspot and he handles actually displaying the data on the appspot page.
+Jorrit has the access to appspot and he handles actually displaying the data on the appspot page.
 
 -------------------
 HOW TO INSTALL
