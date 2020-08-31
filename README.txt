@@ -64,9 +64,9 @@ in the terminal wee_extension --list should now return:
 Extension Name    Version   Description
 csv               0.10      Emit loop or archive data in CSV format.
 
-note: I modified the file csv/install.py from the original. Therefore do NOT use the original csv code (https://github.com/weewx/weewx/wiki/csv). This is because despite what their documentation says I could not configure weewx.conf to tell the original csv code where to output the data (/home/admin/wind2web/data/cscVantageLoop.csv). Therefore I modified install.py and hardcoded the path there. So use the csv folder posted here in wind2web.
+note: I modified the file csv/install.py from the original. Therefore do NOT use the original csv code (https://github.com/weewx/weewx/wiki/csv). This is because despite what their documentation says I could not configure weewx.conf to tell the original csv code where to output the data (/home/admin/wind2web/data/cscVantageLoop.csv). Therefore instead, I modified install.py and hardcoded the path there. So use the csv folder posted here in wind2web.
 
-before continuing: now check that the file /home/admin/wind2web/data/cscVantageLoop.csv contains wind data updated every seconds or so.
+Before continuing: now check that the file /home/admin/wind2web/data/cscVantageLoop.csv contains wind data updated every seconds or so.
 
 3. add the following three cron jobs:
 
