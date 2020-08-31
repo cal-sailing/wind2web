@@ -33,8 +33,9 @@ dateTimeIso   = str(datetime.datetime.fromtimestamp( float(vals[dateTimeIdx]) ).
 
     
 windSpeed10     = vals[windSpeed10Idx] # wind average in the past 10 seconds (as per vantage doc regarding Loop data)
-windDirDeg      = vals[windDirDegIdx]
+windDirDeg      = vals[windDirDegIdx] # wind direction in degrees
     
+# in case there is no wind direction in this frame set it to 0 degree (weewx frames included content varies from frames to frames)
 if (windDirDeg != 'None'):
     windDirDegFloat    = float(windDirDeg)
 else:
