@@ -6,7 +6,6 @@
 import datetime
 import os
 import time
-from subprocess import call
 
 vantageLoopFilePath = '/home/admin/wind2web/data/cscVantageLoop.csv'
 appspotFilePath     = "/home/admin/wind2web/data/cscWind.txt"
