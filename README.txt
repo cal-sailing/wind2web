@@ -52,7 +52,7 @@ and
 you need to modify these paths in the crontab (step 3) as well
 
 2. Install the csv weewx extension:
-cd /home/admin
+cd /home/admin/wind2web
 sudo wee_extension --install=csv
 
 then stop and restart weewx:
