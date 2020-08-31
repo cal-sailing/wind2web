@@ -35,16 +35,16 @@ dateTimeIso   = str(datetime.datetime.fromtimestamp( float(vals[dateTimeIdx]) ).
 windSpeed10     = vals[windSpeed10Idx] # wind average in the past 10 seconds (as per vantage doc regarding Loop data)
 windDirDeg      = vals[windDirDegIdx] # wind direction in degrees
     
-# in case there is no wind direction in this frame set it to 0 degree (weewx frames included content varies from frames to frames)
+
 if (windDirDeg != 'None'):
-    windDirDegFloat    = float(windDirDeg)
+    windDirDegFloat    = float(windDirDeg) # convert to float in order to do proper division for the "degrees to sector conversion"
 else:
-    windDirDegFloat = 0
+    windDirDegFloat = 0 # in case there is no wind direction in this frame set it to 0 degree (weewx frames included content varies from frames to frames)
 
 # convert angles to sectors 
 windGust        = vals[windGustIdx]
 sectors         =  ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW","N"]
-windDirSec      = sectors[int(windDirDegFloat/22.5)]
+windDirSec      = sectors[int(windDirDegFloat/22.5)] # degrees to sector conversion
 
 # build the strings
 windSpeedStr    =  ' wind speed | ' + windSpeed10 + ' | knots | ' + dateTimeUnix + '\n'
