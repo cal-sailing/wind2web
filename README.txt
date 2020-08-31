@@ -60,7 +60,12 @@ then stop and restart weewx:
 sudo /etc/init.d/weewx stop
 sudo /etc/init.d/weewx start
 
-in the terminal wee_extension --list should now return:
+in the terminal do: 
+ 
+      wee_extension --list 
+ 
+this should return:
+
 Extension Name    Version   Description
 csv               0.10      Emit loop or archive data in CSV format.
 
