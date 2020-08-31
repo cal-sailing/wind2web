@@ -54,7 +54,7 @@ sudo wee_extension --install=csv
 then stop and restart weewx:
 
 sudo /etc/init.d/weewx stop
-sudo /etc/init.d/weewx restart
+sudo /etc/init.d/weewx start
 
 in the terminal wee_extension --list should now return:
 Extension Name    Version   Description
@@ -64,7 +64,11 @@ note: I modified the file csv/install.py from the original. Therefore do NOT use
 
 before continuing: now check that the file /home/admin/wind2web/data/cscVantageLoop.csv contains wind data updated every seconds or so.
 
-3. add the following two cron jobs (as admin):
+3. add the following three cron jobs:
 
+/etc/init.d/weewx start
 * * * * * /home/admin/wind2web/wind2appspot.py
 * * * * * ( sleep 5; /home/admin/wind2web/pushWind2appspot.sh )
+
+note: these cronjobs should be run as root (at least the restat one) therefore in order to add them use this: sudo crontab -e
+
