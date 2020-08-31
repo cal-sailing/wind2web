@@ -11,7 +11,7 @@ from subprocess import call
 vantageLoopFilePath = '/home/admin/wind2web/data/cscVantageLoop.csv'
 appspotFilePath     = "/home/admin/wind2web/data/cscWind.txt"
 
-# read last line of vantageLoop
+# read vantageLoop lines
 with open(vantageLoopFilePath) as fp:
     line0 = fp.readline()
     line1 = fp.readline()
