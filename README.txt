@@ -5,6 +5,7 @@ This document contains:
     
 The system gets wind data from a csc machine running weewx and pushes the data to Appspot.
 Once the data is pushed, it is displayed on the appspot page. (Jorrit has the access to the appspot page)
+Currently the csc machine it is installed on is the csc desktop in the club house. It will be moved to the pine64 at some point.
 
 last updated: 08-31-2020
 info: cyril: cyrilbiz@gmail.com
@@ -42,8 +43,7 @@ Your home directory must be /home/admin
 
 you should now have /home/admin/wind2web
 
-notes:
-* If you do not have a /home/admin directory or if you need to install the system in a different directory (/usr/local/bin for instance) then you will have to manually change the path names accordingly in the following files ( because these paths are hardcoded for now ):
+note: If you do not have a /home/admin directory or if you need to install the system in a different directory (/usr/local/bin for instance) then you will have to manually change the path names accordingly in the following files ( because these paths are hardcoded for now ):
 
 - wind2web/csv/install.py (change this BEFORE installing the csv extension to weewx)
 - wind2web/wind2appspot.py
