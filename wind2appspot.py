@@ -25,23 +25,23 @@ windSpeed10Idx = keys.index('windSpeed10')
 windDirDegIdx  = keys.index('windDir')
 windGustIdx    = keys.index('windGust')
     
-# get data from  list
+# get time from  list
 dateTime      = str(datetime.datetime.fromtimestamp(float(vals[dateTimeIdx] ) ))
 dateTimeUnix  = vals[dateTimeIdx] 
 dateTimeIso   = str(datetime.datetime.fromtimestamp( float(vals[dateTimeIdx]) ).isoformat()) + 'UTC-7 hours'
 
-    
+# get wind data
 windSpeed10     = vals[windSpeed10Idx] # wind average in the past 10 seconds (as per vantage doc regarding Loop data)
 windDirDeg      = vals[windDirDegIdx] # wind direction in degrees
-    
+windGust        = vals[windGustIdx]
 
+# convert windDirDeg to float in order to do proper division for the "degrees to sector conversion"
 if (windDirDeg != 'None'):
-    windDirDegFloat    = float(windDirDeg) # convert to float in order to do proper division for the "degrees to sector conversion"
+    windDirDegFloat    = float(windDirDeg)
 else:
     windDirDegFloat = 0 # in case there is no wind direction in this frame set it to 0 degree (weewx content varies from frame to frame)
 
 # convert angles to sectors 
-windGust        = vals[windGustIdx]
 sectors         =  ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW","N"]
 windDirSec      = sectors[int(windDirDegFloat/22.5)] # degrees to sector conversion
 
