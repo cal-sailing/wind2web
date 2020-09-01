@@ -8,7 +8,7 @@ import os
 import time
 
 vantageLoopFilePath = '/home/admin/wind2web/data/cscVantageLoop.csv'
-appspotFilePath     = "/home/admin/wind2web/data/cscWind.txt"
+appspotFilePath     = '/home/admin/wind2web/data/cscWind.txt'
 
 # read vantageLoop lines
 with open(vantageLoopFilePath) as fp:
